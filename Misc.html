@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-08-18 ven 06:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org13d1666">1. <span class="todo IN_PROGRESS">IN-PROGRESS</span> Understanding Birar</a>
+<ul>
+<li><a href="#orgff8194c">1.1. Introduction about this guide</a></li>
+<li><a href="#orgd5e9c96">1.2. What even is Briar?</a>
+<ul>
+<li><a href="#orgf252cd9">1.2.1. How secure is Briar</a></li>
+<li><a href="#orge23a48a">1.2.2. Briar comparison to other protocols</a></li>
+</ul>
+</li>
+<li><a href="#org2844785">1.3. Some basics</a>
+<ul>
+<li><a href="#org497dffe">1.3.1. Symmetric encryption, asymmetric encryption and diffie-hellman</a></li>
+<li><a href="#org2438b1f">1.3.2. How TOR (and TOR hidden services) works</a></li>
+</ul>
+</li>
+<li><a href="#org547ec60">1.4. Getting back to Briar</a>
+<ul>
+<li><a href="#org8a2d597">1.4.1. How QR code works (BQP)</a></li>
+<li><a href="#org29f152d">1.4.2. How briar:// links work (BRP and BHP)</a></li>
+<li><a href="#org99275a4">1.4.3. <span class="todo TODO">TODO</span> How messages are synchronized</a></li>
+<li><a href="#orge99682f">1.4.4. Driving data through transports (BTP)</a></li>
+</ul>
+</li>
+<li><a href="#orgebac0f6">1.5. Sources and references</a>
+<ul>
+<li><a href="#orgdbe2bbf">1.5.1. About Briar</a></li>
+<li><a href="#org24c8b83">1.5.2. Perfect forward secrecy and Diffie-Hellman</a></li>
+<li><a href="#org0fbd0b6">1.5.3. How TOR Hidden Services work</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org13d1666" class="outline-2">
+<h2 id="org13d1666"><span class="section-number-2">1.</span> <span class="todo IN_PROGRESS">IN-PROGRESS</span> Understanding Birar</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgff8194c" class="outline-3">
+<h3 id="orgff8194c"><span class="section-number-3">1.1.</span> Introduction about this guide</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Welcome to this dive into Briar. I never seen an app as secure and
+private as Briar. So I started to look at what exactly was behind it and
+started to get really interested.
+</p>
+
+<p>
+It&rsquo;s also a great opportunity to talk about various interesting things
+such as symmetric and asymmetric cryptography, forward secrecy, key
+exchanges, TOR and TOR Hidden Services, and of course Briar and its
+protocols (Bramble).
+</p>
+
+<p>
+This page is <i>work in progress</i> so I guess I still need to remove some
+technical jargon from it. You can find all my sources at the end of the
+page.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd5e9c96" class="outline-3">
+<h3 id="orgd5e9c96"><span class="section-number-3">1.2.</span> What even is Briar?</h3>
+<div class="outline-text-3" id="text-1-2">
+<blockquote>
+<p>
+<i>Briar is a messaging app designed for activists, journalists, and
+anyone else who needs a safe, easy and robust way to communicate. Unlike
+traditional messaging apps, Briar doesn&rsquo;t rely on a central server -
+messages are synchronized directly between the users&rsquo; devices. If the
+internet&rsquo;s down, Briar can sync via Bluetooth or Wi-Fi, keeping the
+information flowing in a crisis. If the internet&rsquo;s up, Briar can sync
+via the Tor network, protecting users and their relationships from
+surveillance.</i>
+</p>
+</blockquote>
+
+
+<div id="org282abe3" class="figure">
+<p><img src="https://briarproject.org/img/diagram_insecure.png" alt="diagram_insecure.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Example of unsecure traditional messaging</p>
+</div>
+
+<p>
+This is an example of insecure traditional messaging which leaks data
+and metadata about users which can be sold and/or collected by
+governments for surveillance.
+</p>
+
+
+<div id="org6ca9d18" class="figure">
+<p><img src="https://briarproject.org/img/diagram_secure.png" alt="diagram_secure.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Example of how Briar works</p>
+</div>
+
+
+<div id="org7be414e" class="figure">
+<p><img src="https://briarproject.org/img/diagram_sharing.png" alt="diagram_sharing.png" />
+</p>
+<p><span class="figure-number">Figure 3: </span>another more detailed example</p>
+</div>
+
+<p>
+While this is an example of how Briar works, with no central server,
+therefore no way to collect or sell data. This is obviously a very gross
+oversimplification, so we&rsquo;re gonna get into much more details now.
+</p>
+</div>
+
+<div id="outline-container-orgf252cd9" class="outline-4">
+<h4 id="orgf252cd9"><span class="section-number-4">1.2.1.</span> How secure is Briar</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Briar is protected against:
+</p>
+
+<ul class="org-ul">
+<li><b>Metadata surveillance</b>. There are no central server and all traffic
+are either local or through TOR hidden services network.</li>
+<li><b>Content surveillance</b>. All communication between devices is encrypted
+end-to-end, protecting the content from eavesdropping or tampering.</li>
+<li><b>Content filtering</b>. Briar&rsquo;s end-to-end encryption prevents keyword
+filtering, and because of its decentralized design there are no
+servers to block.</li>
+<li><b>Takedown orders</b>. Every user who subscribes to a forum keeps a copy
+of its content, so there&rsquo;s no single point where a post can be
+deleted.</li>
+<li><b>Denial of service attacks</b>. Briar&rsquo;s forums have no central server to
+attack, and every subscriber has access to the content even if they&rsquo;re
+offline. Internet blackouts. Briar can operate over Bluetooth and
+Wi-Fi to keep information flowing during blackouts.</li>
+</ul>
+
+<p>
+With a limited protection against:
+</p>
+
+<ul class="org-ul">
+<li><b>Spywares on the phone</b>. The app prevents being drawn over by other
+apps, screen recording or screenshooting.</li>
+<li><b>Stealing and accessing the data</b>. The app can be very easily signed
+out and data deleted. Meaning that if you are signed out, a stealer or
+hacker can&rsquo;t decrypt your messages. And if everything is removed they
+can&rsquo;t even know you ever used the app.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge23a48a" class="outline-4">
+<h4 id="orge23a48a"><span class="section-number-4">1.2.2.</span> Briar comparison to other protocols</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+Here&rsquo;s how Briar compares to other protocols in terms of protection,
+cryptographic abilities
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Properties</th>
+<th scope="col" class="org-left">Discord</th>
+<th scope="col" class="org-left">Signal</th>
+<th scope="col" class="org-left">Matrix/Element</th>
+<th scope="col" class="org-left">Conversations (XMPP over TOR and with OMEMO)</th>
+<th scope="col" class="org-left">Briar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Network type</td>
+<td class="org-left">Centralized</td>
+<td class="org-left">Centralized</td>
+<td class="org-left">Federated</td>
+<td class="org-left">Federated</td>
+<td class="org-left">Peer to Peer</td>
+</tr>
+
+<tr>
+<td class="org-left">E2E encrypted</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Peer-to-Peer</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Ability to work offline (bluetooth, LAN, etc)</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">TOR Hidden Services</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Protection against theft (while signed out) or screen recording</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Protection against metadata surveillance</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Protection against content surveillance</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Protection against takedown and DDoS attacks</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">➕</td>
+<td class="org-left">➕</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Anonymity</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Unlinkability</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Unobservability</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Operating over several modes of transport</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">❌</td>
+<td class="org-left">✅</td>
+</tr>
+
+<tr>
+<td class="org-left">Support for images</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">❌</td>
+</tr>
+
+<tr>
+<td class="org-left">Support for calls</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">❌</td>
+</tr>
+
+<tr>
+<td class="org-left">Support for chat history (receiving messages while offline)</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">✅</td>
+<td class="org-left">❌</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2844785" class="outline-3">
+<h3 id="org2844785"><span class="section-number-3">1.3.</span> Some basics</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+Before diving into Briar&rsquo;s protocols, we first need to understand some
+basics of networking and cryptography. What we&rsquo;ll learn (in a very
+simplified manner) here is what is symmetric and asymmetric
+cryptography, what is diffie-hellman and how TOR hidden services work.
+</p>
+</div>
+
+<div id="outline-container-org497dffe" class="outline-4">
+<h4 id="org497dffe"><span class="section-number-4">1.3.1.</span> Symmetric encryption, asymmetric encryption and diffie-hellman</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<p>
+To be able to understand what follows we need to understand the
+difference betweeen symmetric and asymmetric cryptography and also
+understand what is called the <i>Diffie-Hellman Key Exchange</i>.
+</p>
+
+
+<div id="orgd49e93c" class="figure">
+<p><img src="https://learn.g2.com/hs-fs/hubfs/G2CR_B050_What-is-Encryption_V1.png?width=2000&amp;name=G2CR_B050_What-is-Encryption_V1.png" alt="G2CR_B050_What-is-Encryption_V1.png?width=2000&amp;name=G2CR_B050_What-is-Encryption_V1.png" />
+</p>
+</div>
+
+<p>
+For the sake of time and your sanity (and mine) we&rsquo;re gonna limit the
+difference between <i>symmetric</i> and <i>asymmetric</i> cryptography to this for
+the moment:
+</p>
+
+<ul class="org-ul">
+<li>Symmetric cryptography has one key that can encrypt and decrypt
+messages. It been used for hundreds of years and is very quick.</li>
+<li>Asymmetric cryptography has two keys, one for encrypting and one for
+decrypting. It&rsquo;s much more recent but also much more
+resource-intensive and slow.</li>
+</ul>
+
+<p>
+But we can get the best of both worlds by using the &ldquo;Diffie-Hellman&rdquo;
+algorithm. Which starts with asymmetric cryptography to exchange keys
+and generate a shared secret that can be used to continue in the less
+resource intensive <i>symmetric</i> cryptography.
+</p>
+
+
+<div id="orga1f843c" class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Public_key_shared_secret.svg/800px-Public_key_shared_secret.svg.png" alt="800px-Public_key_shared_secret.svg.png" />
+</p>
+</div>
+
+<p>
+The Diffie-Hellman algorithm consists of mixing the public key of the
+other person with your private key (the other person does the same).
+Which results at the end with the same shared secret.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2438b1f" class="outline-4">
+<h4 id="org2438b1f"><span class="section-number-4">1.3.2.</span> How TOR (and TOR hidden services) works</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+TOR and hidden services is an important point in Briar when Briar
+operates a remote connection.
+</p>
+
+<p>
+So let&rsquo;s explain the <i>basics</i> of TOR Hidden Services. Let&rsquo;s start with a
+server and a client, but just remember that in the case of Briar, both
+people are servers and clients at the same time. Those images have been
+found on the official Tor Project&rsquo;s website and will explain it much
+better than I ever will.
+</p>
+
+<p>
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-01.png" alt="onion-service-01.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-02.png" alt="onion-service-02.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-03.png" alt="onion-service-03.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-04.png" alt="onion-service-04.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-05.png" alt="onion-service-05.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-06.png" alt="onion-service-06.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-07.png" alt="onion-service-07.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-08.png" alt="onion-service-08.png" />
+<img src="https://community.torproject.org/static/images/onion-services/overview/onion-service-09.png" alt="onion-service-09.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org547ec60" class="outline-3">
+<h3 id="org547ec60"><span class="section-number-3">1.4.</span> Getting back to Briar</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+So we were talking about Briar, or actually Bramble (Bramble reffers to
+the protocols while Briar reffers to the app, the implementation of
+those protocols). So let&rsquo;s first divide it and see which protocols we
+have and treat them one by one.
+</p>
+
+<ul class="org-ul">
+<li>BQP (Bramble QR Code Protocol) for handling QR code (when you are near
+by and with physical access to the other device (i.e Bluetooth and
+LAN)</li>
+<li>BRP (Bramble Rendezvous Protocol) for handling briar:// links</li>
+<li>BHP (Bramble Handshake Protocol) for sharing keys (still with briar://
+links)</li>
+<li>BSP (Bramble Syncronisation Protocol) for synchronising messages</li>
+<li>BTP (Bramble Transport Protocol) for actually transporting data
+(through Tor, Bluetooth or LAN)</li>
+</ul>
+</div>
+
+<div id="outline-container-org8a2d597" class="outline-4">
+<h4 id="org8a2d597"><span class="section-number-4">1.4.1.</span> How QR code works (BQP)</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+When contacts are near-by (can use bluetooth and/or LAN) then they
+should use QR codes to connect, it&rsquo;s the safest method to connect on
+Bramble. And it uses the BQP (Bramble Qr Code Protocol)
+</p>
+
+<ul class="org-ul">
+<li>First both generate a key pair</li>
+<li>Then both generate a QR code containing a public key commitement (the
+first 16 bytes of the hash of the public key), the bluetooth MAC
+address and LAN IP address.</li>
+<li>They both scan each other&rsquo;s QR code and try connect either by LAN,
+bluetooth or both.</li>
+<li>Once connection established, they both send their public key and
+compare them to the committement made.</li>
+<li><i>Diffie-Hellman</i> is done with the keys and is hashed in order to
+generate a shared secret.</li>
+<li>A confirmation is sent containing a hash of the shared secret, the 2
+public keyrs and the 2 QR code payloads. Those are exchanged, compared
+and must be identical.</li>
+<li>A new key is derived from the shared secret and the old keypair is
+deleted.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org29f152d" class="outline-4">
+<h4 id="org29f152d"><span class="section-number-4">1.4.2.</span> How briar:// links work (BRP and BHP)</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+Now there are 2 protocols for operating with briar:// links. The first
+one is called &ldquo;Bramble Rendezvous Protocol&rdquo; or BRP for short and is used
+to discover the peers in the network.
+</p>
+
+<p>
+The second is called &ldquo;Bramble Handshake Protocol&rdquo; (or BHP) and is used
+to share keys and start chatting.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="brp-protocol"></a>BRP protocol<br />
+<div class="outline-text-5" id="text-brp-protocol">
+<p>
+The briar:// link itself is a public key, even if it looks like it, it&rsquo;s
+not the onion link itself, that way it cannot be used to track peers.
+</p>
+
+<p>
+So when you add the other person&rsquo;s public key and send your own public
+key to the other person. What happens is this:
+</p>
+
+<ul class="org-ul">
+<li>First, <i>diffie-hellman</i> is done with the public keys exchanged, so you
+both end up with a shared secret.</li>
+<li>Then some other stuff are done with it which ends up with a 64
+caracter string, then two key pairs are made with the first half and
+the second half of the string (as seeds).</li>
+<li>Those key pairs are then used to create a <i>TOR hidden service</i> and
+thus get 2 onion links. One for you, and one for your friend!</li>
+</ul>
+</div>
+</li>
+
+<li><a id="bhp-protocol"></a>BHP protocol<br />
+<div class="outline-text-5" id="text-bhp-protocol">
+<p>
+The BHP is used to not use the same keys as for the contact discovery
+for actually sending messages. And creating a key pair that can be used
+for BTP.
+</p>
+
+<ul class="org-ul">
+<li>Both generate an ephemeral key pair</li>
+<li>They exchange their public keys</li>
+<li>They do a <i>diffie-hellman</i> and exchange a <i>proof of ownership</i> which
+proves the ownership of the sender&rsquo;s long term public key and
+ephemeral public key and also binds to the recipient&rsquo;s long term
+public key and ephemeral public key.</li>
+<li>Keys are deleted when communication&rsquo;s over</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org99275a4" class="outline-4">
+<h4 id="org99275a4"><span class="section-number-4">1.4.3.</span> <span class="todo TODO">TODO</span> How messages are synchronized</h4>
+</div>
+<div id="outline-container-orge99682f" class="outline-4">
+<h4 id="orge99682f"><span class="section-number-4">1.4.4.</span> Driving data through transports (BTP)</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<p>
+The goal of this protocol is to provide a way to flow data through the
+different transports (bluetooth, LAN, TOR, etc) with, among others,
+</p>
+
+<ul class="org-ul">
+<li><b>Flexibility</b>. The protocol should be able to operate over a wide
+range of underlying transports with bandwidths varying from kilobits
+to gigabits per second, and with latencies varying from milliseconds
+to days.</li>
+<li><b>Concealability</b>. The protocol shouldn&rsquo;t reveal any information that
+could make the requests distinguishable from other protocols. If
+someone is listening to traffic, they shouldn&rsquo;t be able to see that
+one is using Briar.</li>
+<li><b>Confidentiality</b>. The adversary should not be able to learn what data
+is being carried by the protocol.</li>
+<li><b>Integrity</b>. If the adversary truncates the data, the receiving peer
+should be able to detect that this has happened.</li>
+<li><b>Authenticity</b>. The adversary should not be able to cause either peer
+to accept data from any third party as though it came from the other
+peer.</li>
+<li><b>Forward Secrecy</b>. The adversary should not be able to learn what data
+was carried by the protocol if, at some later time, the adversary
+compromises one or both of the peer devices.</li>
+</ul>
+
+<p>
+However, the protocol itself doesn&rsquo;t grant anonymity, unlinkability or
+unobservability. If you want that you then should use TOR (see BRP and
+BHP above).
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgebac0f6" class="outline-3">
+<h3 id="orgebac0f6"><span class="section-number-3">1.5.</span> Sources and references</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-orgdbe2bbf" class="outline-4">
+<h4 id="orgdbe2bbf"><span class="section-number-4">1.5.1.</span> About Briar</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<p>
+Those are my sources about Briar itself. Those go from the most basic to
+the most advanced.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://briarproject.org/how-it-works/">How it works - Briar
+Project</a> is a very simple overview of Briar&rsquo;s security feature and
+stuff.</li>
+<li><a href="https://www.youtube.com/watch?v=sKuljekMzTc">Diving deep into
+Briar - a closer look at its internals at XMPP Meetup Berlin</a> is a
+video explaining how Briar works. You can find the slides of the
+presentation
+<a href="https://nico.dorfbrunnen.eu/assets/posts/2021/diving-at-xmpp/presentation/">here</a>.</li>
+<li><a href="https://code.briarproject.org/briar/briar/-/wikis/home">Briar Wiki</a>
+explains how each component and protocol works in much greater
+details.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org24c8b83" class="outline-4">
+<h4 id="org24c8b83"><span class="section-number-4">1.5.2.</span> Perfect forward secrecy and Diffie-Hellman</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=zSQtyW_ywZc">Perfect Forward Secrecy
+in TLS Explained</a> explains what is forward secrecy and how it works
+in practice in the example of TLS (forward secrecy is used to share
+keys in Briar)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0fbd0b6" class="outline-4">
+<h4 id="org0fbd0b6"><span class="section-number-4">1.5.3.</span> How TOR Hidden Services work</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<p>
+Those are all the informations about TOR Hidden Services. They go from
+the basic components of it, to the full explanations.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=FhF_kvgfEZM">What are Distributed
+Hash Tables</a> explains how DHT works (to understand hidden services)</li>
+<li><a href="https://www.youtube.com/watch?v=QRYzre4bf7I">How TOR Works
+(Computerphile)</a> explains how onion routing which is used for remote
+transport in Briar</li>
+<li><a href="https://www.youtube.com/watch?v=lVcbq_a5N9I">TOR Hidden Services
+(Computerphile)</a> explains how hidden services work (requires
+understanding of onion routing and DHT understanding)</li>
+<li><a href="https://skerritt.blog/how-does-tor-really-work/">How Does Tor Really
+Work? The Definitive Visual Guide (2020)</a> Explains how tor and hidden
+services work in a non video format (requires understanding of DHT).
+<b>Note:</b> It seems part of this is inaccurate, but it does give a pretty
+good overview of TOR in general, beyond onion routing and hidden
+services.</li>
+<li><a href="https://community.torproject.org/onion-services/overview/">How do
+Onion Services Work</a> is the official explanation from Tor Proect
+about hidden services (also called onion services) where all the
+images come from. It&rsquo;s very easy to understand, but if you want a
+deeper understanding of it, I advise you to look at all the links
+above.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2023-08-18 ven 06:31</p>
+</div>
+</body>
+</html>
